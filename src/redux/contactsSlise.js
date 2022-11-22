@@ -11,10 +11,9 @@ const contactsList= [
 ];
 
 const contactsSlise = createSlice({
-    name: "tasks",
+    name: "contacts",
     initialState: {
         item: contactsList,
-        filter:'',
     },
     reducers: {
         newContacts(state, action) {
@@ -22,9 +21,6 @@ const contactsSlise = createSlice({
         },
         deleteContacts(state, action) {
             state.item = state.item.filter(contact => contact.id !== action.payload);
-        },
-        filterValue(state, action) {
-            state.filter = action.payload;
         },
     }
     
@@ -39,4 +35,3 @@ const persistConfig = {
 export const contactsReducer = persistReducer(persistConfig, contactsSlise.reducer);
 export const { newContacts, deleteContacts, filterValue } = contactsSlise.actions;
 export const getItem = state => state.contacts.item;
-export const getFilter = state => state.contacts.filter;

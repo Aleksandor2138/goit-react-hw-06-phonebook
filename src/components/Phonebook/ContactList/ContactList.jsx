@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   deleteContacts,
   getItem,
-  getFilter,
-} from '../../../redux/contactsSlise';
+} from 'redux/contactsSlise.js';
+import { getFilter } from 'redux/filterSlise.js';
 import { NameContacts, List, Elements, Button } from './ContactList.styled';
 
 const ContactList = () => {
